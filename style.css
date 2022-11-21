@@ -92,3 +92,46 @@ body {
 .game-button:last-child {
   margin-right: 0px;
 }
+
+@media (max-width: 400px) {
+  .main-heading {
+    font-size: 17px;
+  }
+
+  .game-container {
+    margin: 0px 30px;
+  }
+
+  .score-heading {
+    font-size: 22px;
+  }
+
+  .game-button {
+    padding: 5px 7px;
+  }
+}
+
+@media (max-width: 900px) {
+  .main-heading {
+    font-size: 26px;
+    text-align: center;
+  }
+
+  .score-heading {
+    font-size: 30px;
+  }
+
+  .play-game {
+    flex-direction: column;
+    margin: 10px 0px 5px 0px;
+  }
+
+  .game-button {
+    margin-right: 0px;
+    margin-bottom: 15px;
+  }
+
+  .game-button:last-child {
+    margin-bottom: 0px;
+  }
+}
