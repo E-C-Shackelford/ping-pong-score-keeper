@@ -69,3 +69,26 @@ body {
   outline: none;
   cursor: pointer;
 }
+
+.play-game {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin: 15px 0px;
+}
+
+.game-button {
+  margin-right: 10px;
+  padding: 5px 10px;
+  background-color: #fff;
+  border: 1px solid #777;
+  border-radius: 10px;
+  color: #222;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.game-button:last-child {
+  margin-right: 0px;
+}
