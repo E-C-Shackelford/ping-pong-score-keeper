@@ -44,3 +44,28 @@ body {
   background-color: #22b8e2;
   border-radius: 10px;
 }
+
+.score-container {
+  background-color: #fff;
+  margin-bottom: 50px;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+.score-heading {
+  font-size: 35px;
+  color: #444;
+}
+
+.scoreSelection {
+  margin-bottom: 40px;
+}
+
+.select {
+  border: 1px solid #555;
+  border-radius: 10px;
+  font-size: 18px;
+  padding: 5px 10px;
+  outline: none;
+  cursor: pointer;
+}
