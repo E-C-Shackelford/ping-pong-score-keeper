@@ -8,11 +8,55 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
 
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
+    <section class="main-container">
+      <div class="players-container">
+        <img
+          class="game-players"
+          src="img/undraw_Winners_re_wr1l.png"
+          alt="Illustration of two people high-fiving"
+        />
+      </div>
+
+      <div class="game-container">
+        <h1 class="main-heading">Let's Play Ping Pong!</h1>
+
+        <div class="score-container">
+          <h2 class="score-heading">
+            <span id="player1ScoreDisplay">0</span> to
+            <span id="player2ScoreDisplay">0</span>
+          </h2>
+        </div>
+
+        <div class="scoreSelection">
+          <select name="" id="winScoreSelection" class="select">
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </select>
+        </div>
+
+        <div class="play-game">
+          <button id="player1Btn" class="game-button">+1 Player One</button>
+          <button id="player2Btn" class="game-button">+1 Player Two</button>
+          <button id="resetBtn" class="game-button">Reset</button>
+        </div>
+      </div>
+    </section>
+
     <script src="app.js"></script>
   </body>
 </html>
