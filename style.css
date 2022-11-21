@@ -93,6 +93,14 @@ body {
   margin-right: 0px;
 }
 
+.winning-player {
+  color: #e015e0;
+}
+
+.losing-player {
+  color: #0ab80a;
+}
+
 @media (max-width: 400px) {
   .main-heading {
     font-size: 17px;
