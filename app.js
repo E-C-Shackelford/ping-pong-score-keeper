@@ -33,3 +33,20 @@ player2Btn.addEventListener("click", function () {
     player2ScoreDisplay.textContent = player2Score;
   }
 });
+
+winScoreSelection.addEventListener("change", function () {
+  winningScore = parseInt(this.value);
+  reset();
+});
+
+resetBtn.addEventListener("click", reset);
+
+function reset() {
+  gameOver = false;
+  player1Score = 0;
+  player2Score = 0;
+  player1ScoreDisplay.textContent = 0;
+  player2ScoreDisplay.textContent = 0;
+  player1ScoreDisplay.classList.remove("winning-player", "losing-player");
+  player2ScoreDisplay.classList.remove("winning-player", "losing-player");
+}
