@@ -1,37 +1,39 @@
-const player1Btn = document.querySelector("#player1Btn");
-const player2Btn = document.querySelector("#player2Btn");
+const player1 = {
+  score: 0,
+  button: document.querySelector("#player1Btn"),
+  display: document.querySelector("#player1ScoreDisplay"),
+};
+
+const player2 = {
+  score: 0,
+  button: document.querySelector("#player2Btn"),
+  display: document.querySelector("#player2ScoreDisplay"),
+};
+
 const resetBtn = document.querySelector("#resetBtn");
-const player1ScoreDisplay = document.querySelector("#player1ScoreDisplay");
-const player2ScoreDisplay = document.querySelector("#player2ScoreDisplay");
 const winScoreSelection = document.querySelector("#winScoreSelection");
 
-let player1Score = 0;
-let player2Score = 0;
 let winningScore = 3;
 let gameOver = false;
 
-player1Btn.addEventListener("click", function () {
+function updateScores(player, opponent) {
   if (!gameOver) {
-    player1Score += 1;
-    if (player1Score === winningScore) {
+    player.score += 1;
+    if (player.score === winningScore) {
       gameOver = true;
-      player1ScoreDisplay.classList.add("winning-player");
-      player2ScoreDisplay.classList.add("losing-player");
+      player.display.classList.add("winning-player");
+      opponent.display.classList.add("losing-player");
     }
-    player1ScoreDisplay.textContent = player1Score;
+    player.display.textContent = player.score;
   }
+}
+
+player1.button.addEventListener("click", function () {
+  updateScores(player1, player2);
 });
 
-player2Btn.addEventListener("click", function () {
-  if (!gameOver) {
-    player2Score += 1;
-    if (player2Score === winningScore) {
-      gameOver = true;
-      player2ScoreDisplay.classList.add("winning-player");
-      player1ScoreDisplay.classList.add("losing-player");
-    }
-    player2ScoreDisplay.textContent = player2Score;
-  }
+player2.button.addEventListener("click", function () {
+  updateScores(player2, player1);
 });
 
 winScoreSelection.addEventListener("change", function () {
@@ -43,10 +45,9 @@ resetBtn.addEventListener("click", reset);
 
 function reset() {
   gameOver = false;
-  player1Score = 0;
-  player2Score = 0;
-  player1ScoreDisplay.textContent = 0;
-  player2ScoreDisplay.textContent = 0;
-  player1ScoreDisplay.classList.remove("winning-player", "losing-player");
-  player2ScoreDisplay.classList.remove("winning-player", "losing-player");
+  for (let player of [player1, player2]) {
+    player.score = 0;
+    player.display.textContent = 0;
+    player.display.classList.remove("winning-player", "losing-player");
+  }
 }
